@@ -18,8 +18,8 @@ const Products = () => {
         { key: 'rate', label: 'Per' },
         { key: 'inStock', label: 'isAvailable' },// it must be last indexed
       ];
-      const { token } = useSelector((state: RootState) => state.auth)
 
+      const { token } = useSelector((state: RootState) => state.auth)
       useEffect(()=>{
         console.log("hii");
         ;(async () =>{
