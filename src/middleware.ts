@@ -1,7 +1,5 @@
 import { NextResponse } from 'next/server'
 import type { NextRequest } from 'next/server'
-import { useSelector } from "react-redux";
-import { RootState } from "./app/AppWrappers";
 // import { getToken } from 'next-auth/jwt';
 // import { parse } from 'cookie';
  
