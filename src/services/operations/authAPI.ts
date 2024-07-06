@@ -3,7 +3,7 @@ import { toast } from "react-hot-toast"
 import { setLoading, setToken } from "@/slices/authSlice"
 import { apiConnector } from "../apiconnector"
 import { endpoints } from "../apis"
-import Cookies from "js-cookie"
+// import Cookies from "js-cookie"
 
 const {
   SENDOTP_API,
@@ -72,7 +72,7 @@ export function signUp(
       toast.success("Signup Successful")
       router.push("/signin")
     } catch (error) {
-      console.log("SIGNUP API ERROR............", error)
+      // console.log("SIGNUP API ERROR............", error)
       toast.error("Signup Failed")
       router.push("/signup")
     }
@@ -92,23 +92,23 @@ export function login(email: any, password: any, router: any) {
         password,
       },null,null)
       
-      console.log("LOGIN API RESPONSE............", response)
+      // console.log("LOGIN API RESPONSE............", response)
       if (!response.data.success) {
         throw new Error(response.data.message)
       }
-      const data = await Cookies.set("token",response.data.token,{
-        // expires: new Date(Date.now() + 3 * 24 * 60 * 60 * 1000),
-        expires: 7,
-      });
+      // const data = await Cookies.set("token",response.data.token,{
+      //   expires: 7,
+      //   sameSite:"None",
+      // });
 
-      console.log("data cookie ",data);
+      // console.log("data cookie ",data);
       toast.success("Login Successful")
       router.push("/");
       dispatch(setToken(response.data.token))
       localStorage.setItem("token", response.data.token)
     } 
     catch (error) {
-      console.log("LOGIN API ERROR............", error)
+      // console.log("LOGIN API ERROR............", error)
       toast.error("Login Failed")
     }
     dispatch(setLoading(false))

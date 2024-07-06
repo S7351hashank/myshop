@@ -1,4 +1,5 @@
 const BASE_URL = process.env.NEXT_PUBLIC_API_URL;
+// const BASE_URL = "http://localhost:4000/api/v1"
 
 // console.log("baseUrl",BASE_URL);
 // AUTH ENDPOINTS

@@ -105,7 +105,7 @@ exports.signup = async (req, res) => {
       message: "User registered successfully",
     })
   } catch (error) {
-    console.error(error)
+    // console.error(error)
     return res.status(500).json({
       success: false,
       error:error,
@@ -159,7 +159,8 @@ exports.login = async (req, res) => {
       const options = {
         expires: new Date(Date.now() + 3 * 24 * 60 * 60 * 1000),
         httpOnly: true,
-        sameSite:0,
+        sameSite:"None",
+        secure:true,
       }
       res.cookie("token", token, options).status(200).json({
         success: true,
