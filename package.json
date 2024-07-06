@@ -6,8 +6,7 @@
     "dev": "next dev",
     "build": "next build",
     "lint": "next lint",
-    "server": "cd server && npm run dev",
-    // "dev": "concurrently -n \"client,server\" -c \"bgBlue,bgYellow\" \"npm start\" \"npm run server\""
+    "server": "cd server && npm run dev"
   },
   "dependencies": {
     "@chakra-ui/next-js": "^2.2.0",
