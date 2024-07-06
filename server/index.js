@@ -23,8 +23,10 @@ app.use(express.json());
 app.use(cookieParser());
 app.use(
 	cors({
-		origin:"https://myshop-storemanage.vercel.app/",
-		credentials:true,
+		origin:"https://myshop-storemanage.vercel.app",
+		credentials: true,
+        methods: "GET,HEAD,PUT,PATCH,POST,DELETE",
+        allowedHeaders: "Content-Type,Authorization",
 	})
 )
 
