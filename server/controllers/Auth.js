@@ -147,7 +147,7 @@ exports.login = async (req, res) => {
         { email: user.email, id: user._id },
         process.env.JWT_SECRET,
         {
-          expiresIn: "72h",
+          expiresIn: "168h",
         }
       )
 
@@ -157,10 +157,10 @@ exports.login = async (req, res) => {
       user.password = undefined
       // Set cookie for token and return success response
       const options = {
-        expires: new Date(Date.now() + 3 * 24 * 60 * 60 * 1000),
+        // expires: new Date(Date.now() + 3 * 24 * 60 * 60 * 1000),
         httpOnly: true,
-        sameSite:"None",
         secure:true,
+        sameSite:"None",
       }
       res.cookie("token", token, options).status(200).json({
         success: true,

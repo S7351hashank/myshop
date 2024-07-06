@@ -25,18 +25,9 @@ app.use(
 	cors({
 		origin:"https://myshop-storemanage.vercel.app",
 		credentials: true,
-        methods: "GET,HEAD,PUT,PATCH,POST,DELETE",
-        allowedHeaders: "Content-Type,Authorization",
 	})
 )
 
-app.use((req, res, next) => {
-    res.setHeader('Access-Control-Allow-Origin', "https://myshop-storemanage.vercel.app");
-    res.setHeader('Access-Control-Allow-Credentials', 'true');
-    res.setHeader('Access-Control-Allow-Methods', 'GET,HEAD,OPTIONS,POST,PUT');
-    res.setHeader('Access-Control-Allow-Headers', 'Origin, X-Requested-With, Content-Type, Accept, Authorization');
-    next();
-});
 
 //routes
 app.use("/api/v1/auth", userRoutes);
