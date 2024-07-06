@@ -3,7 +3,7 @@ import { toast } from "react-hot-toast"
 import { setLoading, setToken } from "@/slices/authSlice"
 import { apiConnector } from "../apiconnector"
 import { endpoints } from "../apis"
-// import Cookies from "js-cookie"
+import Cookies from "js-cookie"
 
 const {
   SENDOTP_API,
@@ -96,10 +96,10 @@ export function login(email: any, password: any, router: any) {
       if (!response.data.success) {
         throw new Error(response.data.message)
       }
-      // const data = await Cookies.set("token",response.data.token,{
-      //   expires: 7,
-      //   sameSite:"None",
-      // });
+      const data = await Cookies.set("token",response.data.token,{
+        expires: 7,
+        sameSite:"None",
+      });
 
       // console.log("data cookie ",data);
       toast.success("Login Successful")
