@@ -96,7 +96,7 @@ export function login(email: any, password: any, router: any) {
       if (!response.data.success) {
         throw new Error(response.data.message)
       }
-      const data = Cookies.set("token", response.data.token, {
+      const data = await Cookies.set("token", response.data.token, {
         expires: 7,
       });
 
@@ -104,6 +104,7 @@ export function login(email: any, password: any, router: any) {
       toast.success("Login Successful")
       router.push("/");
       dispatch(setToken(response.data.token))
+      localStorage.removeItem("token")
       localStorage.setItem("token", response.data.token)
     } 
     catch (error) {

@@ -18,7 +18,7 @@ const Signin = () => {
     const dispatch: AppDispatch = useDispatch();
     const { loading } = useSelector((state: RootState) => state.auth);
     const router = useRouter();
-    const SubmitHandler = (data: LoginFormData) => {
+    const SubmitHandler = async(data: LoginFormData) => {
         dispatch(login(data.email, data.password, router))
     }
     return (
