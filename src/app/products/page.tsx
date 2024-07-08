@@ -4,6 +4,7 @@ import { GetAllProducts } from '@/services/operations/productAPI';
 import React, { useEffect, useState } from 'react'
 import { useSelector } from "react-redux";
 import { RootState } from "../AppWrappers";
+import WithAuth from '@/components/WithAuth';
 
 const Products = () => {
       const [data,setData] = useState([]);
@@ -21,10 +22,10 @@ const Products = () => {
 
       const { token } = useSelector((state: RootState) => state.auth)
       useEffect(()=>{
-        console.log("hii");
+        // console.log("hii");
         ;(async () =>{
           setLoading(true);
-          console.log("hii2");
+          // console.log("hii2");
           const result = await GetAllProducts(token ?? '');
           console.log("result",result);
           if(result){
@@ -60,6 +61,6 @@ const Products = () => {
   )
 }
 
-export default Products
+export default WithAuth(Products)
 
 

@@ -5,6 +5,7 @@ import { useForm, useFieldArray } from 'react-hook-form';
 import { useSelector } from "react-redux";
 import { RootState } from "../AppWrappers";
 import { AddMoreProduct } from '@/services/operations/productAPI';
+import WithAuth from '@/components/WithAuth';
 
 interface MedFormData {
     formData: {
@@ -53,7 +54,7 @@ const AddProductAll = () => {
 
     const onSubmitHandler = async (data: MedFormData) => {
         setLoading(true);
-        console.log("data formData",data.formData);
+        // console.log("data formData",data.formData);
         await AddMoreProduct(token ?? "", data.formData);
         reset();
         setLoading(false);
@@ -171,4 +172,4 @@ const AddProductAll = () => {
     )
 }
 
-export default AddProductAll
+export default WithAuth(AddProductAll)

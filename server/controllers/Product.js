@@ -16,6 +16,7 @@ exports.getAllProductByUserId = async (req, res) => {
         }
 
         const decode = await jwt.verify(token, process.env.JWT_SECRET);
+        
 
         const allProducts = await Product.find({ userId: decode.id });
 

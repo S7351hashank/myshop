@@ -1,8 +1,6 @@
 const BASE_URL = process.env.NEXT_PUBLIC_API_URL;
 // const BASE_URL = "http://localhost:4000/api/v1"
 
-// console.log("baseUrl",BASE_URL);
-// AUTH ENDPOINTS
 export const endpoints = {
   SENDOTP_API: BASE_URL + "/auth/sendotp",
   SIGNUP_API: BASE_URL + "/auth/signup",

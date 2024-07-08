@@ -5,6 +5,7 @@ import { useForm } from 'react-hook-form';
 import { useSelector } from "react-redux";
 import { RootState } from "../AppWrappers";
 import { AddOneProduct } from '@/services/operations/productAPI';
+import WithAuth from '@/components/WithAuth';
 
 interface MedFormData {
     type: string;
@@ -132,5 +133,5 @@ const AddProductOne = () => {
     )
 }
 
-export default AddProductOne 
+export default WithAuth(AddProductOne)
 
