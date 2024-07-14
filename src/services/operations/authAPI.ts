@@ -96,9 +96,9 @@ export function login(email: any, password: any, router: any) {
       if (!response.data.success) {
         throw new Error(response.data.message)
       }
-      const data = await Cookies.set("token", response.data.token, {
-        expires: 7,
-      });
+      // const data = await Cookies.set("token", response.data.token, {
+      //   expires: 7,
+      // });
 
       // console.log("data cookie ",data);
       toast.success("Login Successful")
