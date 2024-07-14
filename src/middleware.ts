@@ -22,6 +22,7 @@ export const middleware = async(req: NextRequest)=> {
   const ispublicpath = (path ==='/signin' || path ==='/signup' || path ==='/forgotPassword' || path ==='/verifyemail' )
 
   const token = await req.cookies.get('token')?.value ?? false;
+  console.log("token",token);
 
   if(!ispublicpath && !token){
     // console.log('Redirecting to /signin');
