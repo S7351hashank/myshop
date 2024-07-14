@@ -4,8 +4,6 @@ import { GetAllProducts } from '@/services/operations/productAPI';
 import React, { useEffect, useState } from 'react'
 import { useSelector } from "react-redux";
 import { RootState } from "../AppWrappers";
-import WithAuth from '@/components/WithAuth';
-
 const Products = () => {
       const [data,setData] = useState([]);
       const [loading, setLoading] = useState(false)
@@ -61,6 +59,6 @@ const Products = () => {
   )
 }
 
-export default WithAuth(Products)
+export default Products
 
 

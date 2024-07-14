@@ -23,6 +23,7 @@
     "js-cookie": "^3.0.5",
     "next": "14.2.4",
     "next-auth": "^4.24.7",
+    "next-client-cookies": "^1.1.1",
     "nextjs-toploader": "^1.6.12",
     "react": "^18",
     "react-dom": "^18",

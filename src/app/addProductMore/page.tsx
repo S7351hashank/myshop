@@ -5,7 +5,6 @@ import { useForm, useFieldArray } from 'react-hook-form';
 import { useSelector } from "react-redux";
 import { RootState } from "../AppWrappers";
 import { AddMoreProduct } from '@/services/operations/productAPI';
-import WithAuth from '@/components/WithAuth';
 
 interface MedFormData {
     formData: {
@@ -172,4 +171,4 @@ const AddProductAll = () => {
     )
 }
 
-export default WithAuth(AddProductAll)
+export default AddProductAll
